@@ -1,0 +1,27 @@
+﻿@page
+@model Food.Pages.Restaurants.ListModel
+@{
+}
+
+<h1>Restaurants</h1>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-outline-dark">
+                    <i class="fas fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+    @foreach(var r in Model.Restaurants)
+    {
+        <partial name="_Summary" model="r" />
+    }
+    <a asp-page="./Edit" class="btn btn-primary">Add new</a>
+
+    @section footer{ 
+    <div>Place in footer section</div>
+    }
